@@ -8,6 +8,8 @@ import {
   Command,
   Frame,
   GalleryVerticalEnd,
+  LayoutList,
+  ListTodo,
   Map,
   PieChart,
   Settings2,
@@ -29,8 +31,8 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "darya",
+    email: "abdullahzadeh.darya@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
   teams: [
@@ -52,7 +54,7 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Dashboard",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
@@ -72,20 +74,21 @@ const data = {
       ],
     },
     {
-      title: "Models",
+      title: "Tasks",
       url: "#",
-      icon: Bot,
+      icon: ListTodo,
       items: [
         {
-          title: "Genesis",
+          title: "To Do",
+          url: "/todo",
+          icon: LayoutList,
+        },
+        {
+          title: "In Progress",
           url: "#",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "Completed",
           url: "#",
         },
       ],
@@ -154,7 +157,7 @@ const data = {
       icon: Map,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
