@@ -62,8 +62,10 @@ export const fetchTasksCompleted= async () => {
   try {
     const query = qs.stringify(
       {
-        status: {
-          equals: "completed",
+        where: {
+          status: {
+            equals: "completed",
+          },
         },
       },
       { addQueryPrefix: true }

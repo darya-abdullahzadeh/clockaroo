@@ -85,11 +85,11 @@ const data = {
         },
         {
           title: "In Progress",
-          url: "#",
+          url: "/in-progress",
         },
         {
           title: "Completed",
-          url: "#",
+          url: "/completed",
         },
       ],
     },
