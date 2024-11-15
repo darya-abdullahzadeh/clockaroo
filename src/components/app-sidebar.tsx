@@ -12,6 +12,7 @@ import {
   ListTodo,
   Map,
   PieChart,
+  PlusCircleIcon,
   Settings2,
   SquareTerminal,
 } from "lucide-react"
@@ -54,8 +55,13 @@ const data = {
   ],
   navMain: [
     {
+      title: 'Add task',
+      url: '/new',
+      icon: PlusCircleIcon
+    },
+    {
       title: "Dashboard",
-      url: "#",
+      url: "/",
       icon: SquareTerminal,
       isActive: true,
       items: [
@@ -166,6 +172,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
+        {/* Add Task Button - Always visible at the top of the sidebar */}
+        <div className="px-4 py-2">
+          <a href="/new">
+            <button className="flex items-center bg-blue-600 text-white rounded-md px-4 py-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <PlusCircleIcon className="mr-2" />
+              Add Task
+            </button>
+          </a>
+        </div>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
@@ -174,5 +189,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }
